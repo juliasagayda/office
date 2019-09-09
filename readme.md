@@ -1,58 +1,55 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+Тестовое задание
+Есть две сущности: сотрудники и отделы. Сотрудники могут быть с почасовой оплатой либо с
+месячной ставкой. Вычисление оплаты труда для сотрудников с почасовой оплатой будет
+иметь следующую формулу: количество часов * сумму за один час. Для сотрудников со
+ставкой метод расчета возвращает месячную ставку. Реализовать следующую
+функциональность:
+1. Выборка сотрудников из XML файла (формат продумать самостоятельно)
+2. Выборка сотрудников из БД (Спроектировать самостоятельно)
+3. Вывести список сотрудников со следующей информацией: ФИО, дата рождения, отдел,
+должность, тип сотрудника (ставка или почасовая оплата), оплата за месяц (рассчитывается
+по формуле в зависимости от типа сотрудника).
+4. Реализовать возможность вывода (10, 25, 50, 100) сотрудников на страницу с
+возможностью выбора к показу количества сотрудников. (По умолчанию 10).
+5. Добавить возможность пагинации (pagination) по сотрудникам.
+6. Добавить навигацию по отделам, переход по отделу ведет на страницу вывода сотрудников
+выбранного отдела.
+7. Реализация страницы для отображения 404 http статуса.
+Принцип формирования URL:
+Возможные варианты URL для ЧПУ относительно домена:
+/employes - Вывод списка сотрудников
+/employes?page=3 - третья страница пагинации списка сотрудников
+/employes/[department] - Вывод списка сотрудников по отделу
+/employes/[department]?page=3 - Вывод списка сотрудников по отделу третья страница
+пагинации
+Где [department] – это идентификатор отдела
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Такие данные как количество вывода сотрудников на страницу можно вынести в GET-
+параметр.
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Условия выполнения
+Что можно использовать: Laravel, mySql, javascript/Vue.js, html, css.
+Задание выполнять на Laravel 6.0. PHP 7.2.
+Что ожидается
+1. Чистота кода и его читабельность.
+2. Соответствие стандартам кодирования.
+3. Обоснованное применение принципов ООП.
+4. Использование только стандартных средств Laravel.
+5. Проектирование базы данных. (Нормализация).
+6. Валидный HTML5.
+7. Пример XML файла.
+Этапы выполнения тестового задания
+1. Прочитать и вникнуть в ТЗ.
+2. Спроектировать базу данных (Нормализировать).
+3. Создать миграции (migrations) и сиды (seeding) для создания базы и наполнения её
+тестовыми данными. Система должна корректно работать как с 1000-й сотрудников, так и в
+случае если таблица будет пустой.
+4. Роутинг.
+5. Заложение бизнес-логики.
+6. Верстка и frontend, (Верстка как таковая оцениваться не будет, главное не отступать от
+корректного использования DOM).
+7. Тестирование и отладка.
+Прием задания
+1. Исходный код — ссылка на github.
+2. Какая часть функциональности была выполнена?
+3. При сдаче задания указать количество часов потраченного на выполнение.
